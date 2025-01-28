@@ -1,73 +1,98 @@
-/* Reset básico */
+/* Reset básico para remover margens e preenchimentos padrão */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Estilos gerais do corpo da página */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+    /* Cor de fundo padrão (tema light) */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    /* Faz o corpo ocupar 100% da altura da tela */
     color: #333;
+    /* Cor do texto padrão (tema light) */
     transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para mudanças de tema */
 }
 
+/* Estilos do contêiner do relógio */
 .relogio-container {
     text-align: center;
     background-color: #fff;
+    /* Fundo branco (tema light) */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
     transition: background-color 0.3s, color 0.3s;
+    /* Transição suave para mudanças de tema */
 }
 
+/* Estilos do título */
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
+/* Estilos do relógio */
 #relogio {
     font-size: 48px;
     font-weight: bold;
     color: #007BFF;
+    /* Cor azul para o relógio */
 }
 
+/* Estilos do botão */
 button {
     margin-top: 20px;
     padding: 10px 20px;
     font-size: 16px;
     background-color: #007BFF;
+    /* Cor de fundo azul */
     color: #fff;
+    /* Cor do texto branco */
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+    /* Transição suave para hover */
 }
 
+/* Efeito hover no botão */
 button:hover {
     background-color: #0056b3;
+    /* Cor de fundo azul mais escura */
 }
 
 /* Estilos para o tema dark */
 body.dark-theme {
     background-color: #333;
+    /* Cor de fundo escura */
     color: #f4f4f4;
+    /* Cor do texto clara */
 }
 
 body.dark-theme .relogio-container {
     background-color: #444;
+    /* Cor de fundo escura para o contêiner */
     color: #f4f4f4;
+    /* Cor do texto clara */
 }
 
 body.dark-theme button {
     background-color: #555;
+    /* Cor de fundo escura para o botão */
     color: #fff;
+    /* Cor do texto clara */
 }
 
 body.dark-theme button:hover {
     background-color: #777;
+    /* Cor de fundo mais clara no hover */
 }

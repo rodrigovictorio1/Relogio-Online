@@ -1,17 +1,22 @@
 // Função para atualizar o relógio
 function atualizarRelogio() {
+    // Obtém a data e hora atuais
     const agora = new Date();
+    // Formata as horas, minutos e segundos para sempre ter dois dígitos
     const horas = String(agora.getHours()).padStart(2, '0');
     const minutos = String(agora.getMinutes()).padStart(2, '0');
     const segundos = String(agora.getSeconds()).padStart(2, '0');
 
+    // Atualiza o conteúdo do elemento com o ID "relogio"
     const relogio = document.getElementById('relogio');
     relogio.textContent = `${horas}:${minutos}:${segundos}`;
 }
 
-// Função para alternar o tema
+// Função para alternar entre os temas light e dark
 function toggleTheme() {
+    // Obtém o elemento body
     const body = document.body;
+    // Alterna a classe 'dark-theme' no body
     body.classList.toggle('dark-theme');
 
     // Salva a preferência do tema no localStorage
@@ -19,18 +24,20 @@ function toggleTheme() {
     localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
 }
 
-// Verifica o tema salvo no localStorage e aplica ao carregar a página
+// Função para aplicar o tema salvo no localStorage ao carregar a página
 function applySavedTheme() {
+    // Obtém o tema salvo no localStorage
     const savedTheme = localStorage.getItem('theme');
+    // Se o tema salvo for 'dark', aplica a classe 'dark-theme' ao body
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-theme');
     }
 }
 
-// Adiciona o evento de clique ao botão de alternar tema
+// Adiciona um evento de clique ao botão de alternar tema
 document.getElementById('toggleTheme').addEventListener('click', toggleTheme);
 
-// Inicializa o relógio e aplica o tema salvo
+// Inicializa o relógio e aplica o tema salvo ao carregar a página
 atualizarRelogio();
 applySavedTheme();
 
