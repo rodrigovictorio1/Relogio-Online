@@ -25,6 +25,19 @@ function updateClock() {
     document.getElementById('date').textContent = currentDate;
 }
 
+// Alternar tema dark/light
+const themeToggle = document.getElementById('theme-toggle');
+themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+
+    // Alterar o ícone do botão
+    if (document.body.classList.contains('dark-mode')) {
+        themeToggle.textContent = '☀️'; // Sol para light mode
+    } else {
+        themeToggle.textContent = '🌙'; // Lua para dark mode
+    }
+});
+
 // Atualizar o relógio a cada segundo
 setInterval(updateClock, 1000);
 

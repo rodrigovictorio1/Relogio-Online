@@ -8,11 +8,18 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
+    color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
 }
 
 .container {
@@ -20,11 +27,16 @@ body {
     padding: 20px 40px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode .container {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
 }
 
 h1 {
     font-size: 2rem;
-    color: #333;
     margin-bottom: 20px;
 }
 
@@ -35,7 +47,42 @@ h1 {
     margin-bottom: 10px;
 }
 
+body.dark-mode .clock {
+    color: #00bcd4;
+}
+
 .date {
     font-size: 1.2rem;
     color: #555;
+}
+
+body.dark-mode .date {
+    color: #bbb;
+}
+
+/* Estilo do botão de alternância */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+body.dark-mode .theme-toggle {
+    background-color: #00bcd4;
 }
